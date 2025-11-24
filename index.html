@@ -10,6 +10,156 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			.timeline-centered {
+				position: relative;
+				padding: 20px 0;
+				margin: 20px 0;
+			}
+			.timeline-centered::before {
+				content: '';
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 0;
+				bottom: 0;
+				width: 3px;
+				background: #f56a6a;
+			}
+			.timeline-row {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 40px;
+				position: relative;
+			}
+			.timeline-row::before {
+				content: '';
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 15px;
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				background: #f56a6a;
+				border: 3px solid #fff;
+				z-index: 1;
+			}
+			.timeline-left, .timeline-right {
+				width: 45%;
+				padding: 15px 20px;
+				background: #f9f9f9;
+				border-radius: 8px;
+			}
+			.timeline-left {
+				text-align: right;
+			}
+			.timeline-right {
+				text-align: left;
+			}
+			.timeline-empty {
+				width: 45%;
+			}
+			.timeline-date {
+				font-weight: 600;
+				color: #f56a6a;
+				font-size: 0.85em;
+				margin-bottom: 5px;
+			}
+			.timeline-title {
+				font-weight: 700;
+				font-size: 1em;
+				margin-bottom: 3px;
+			}
+			.timeline-subtitle {
+				color: #666;
+				font-size: 0.9em;
+				margin: 0;
+			}
+			.timeline-label {
+				font-size: 0.75em;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				color: #999;
+				margin-bottom: 8px;
+			}
+			.highlight-box {
+				background: #f5f5f5;
+				padding: 20px;
+				border-radius: 8px;
+				margin: 20px 0;
+				border-left: 4px solid #f56a6a;
+			}
+			.stats-row {
+				display: flex;
+				gap: 10px;
+				margin: 15px 0;
+				flex-wrap: wrap;
+			}
+			.stat-chip {
+				background: #f9f9f9;
+				padding: 8px 14px;
+				border-radius: 20px;
+				font-size: 0.85em;
+				border: 1px solid #e0e0e0;
+				display: inline-flex;
+				align-items: center;
+				gap: 6px;
+			}
+			.stat-chip strong {
+				color: #f56a6a;
+			}
+			.focus-section {
+				margin: 20px 0;
+				padding: 15px;
+				background: #fff;
+				border-radius: 8px;
+				border: 1px solid #e8e8e8;
+			}
+			.focus-label {
+				font-size: 0.8em;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				color: #999;
+				margin-bottom: 10px;
+			}
+			.focus-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+			}
+			.focus-tag {
+				background: #f56a6a15;
+				color: #f56a6a;
+				padding: 5px 12px;
+				border-radius: 15px;
+				font-size: 0.85em;
+				font-weight: 500;
+			}
+			.menu-active {
+				color: #f56a6a !important;
+				font-weight: 600;
+			}
+			@media screen and (max-width: 736px) {
+				.timeline-centered::before {
+					left: 20px;
+				}
+				.timeline-row {
+					flex-direction: column;
+				}
+				.timeline-row::before {
+					left: 20px;
+				}
+				.timeline-left, .timeline-right {
+					width: 100%;
+					text-align: left;
+					margin-left: 40px;
+				}
+				.timeline-empty {
+					display: none;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -22,41 +172,150 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo"><strong>About Me</strong></a>
+									<a href="index.html" class="logo"><strong>Gayathri Akkinapalli</strong></a>
 									<ul class="icons">
-			
-
-										<li><a href="https://www.linkedin.com/in/gayathri-akkinapalli-5638511b9/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">Twitter</span></a></li>
-										<li><a href="https://github.com/" target="_blank" class="icon brands fa-github"><span class="label">Snapchat</span></a></li>
-										<li><a href="https://www.instagram.com/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="https://mail.google.com/mail/" target="_blank" class="icon brands fa-google-plus-g"><span class="label">Medium</span></a></li> 
-										<li><a href="" class="icon brands fa-google-scholar"><span class="label">Medium</span></a></li> 
-
+										<li><a href="https://www.linkedin.com/in/gayathri-akkinapalli/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/akkina10gayu" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="mailto:gayathri.akkinapalli2000@gmail.com" target="_blank" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 									</ul>
 								</header>
 
-							<!-- Content -->
+							<!-- Banner -->
 								<section id="banner">
 									<div class="content">
-										
-										<h2>Hi, I’m Gayathri Akkinapalli</h2>
-										<p>I am first year CS Masters student at University of Massachusetts Amherst. </p>
+										<h1>Hi, I'm Gayathri</h1>
+										<p class="highlight-box">
+											<strong>AI/ML Engineer</strong> who loves turning ambitious ideas into systems that actually work. I'm driven by the challenge of making AI smarter, safer, and more useful—whether that means teaching language models to understand us better or building pipelines that scale to real users. Always learning, always building.
+										</p>
 
-										<p>Previously, I was a Data Scientist at Carelon Global, working on machine learning models and recommendation systems. I did my Bachelors of Technology in Computer Engineering from Indian Institute of information Technology Design & Management Kurnool.</p>
-										
-										<h2>Research Interests</h2>
-										<p>Natural Language Processing, Machine Learning, Computer Vision</p>
+										<!-- Compact Stats -->
+										<div class="stats-row">
+											<span class="stat-chip"><strong>4</strong> Publications</span>
+											<span class="stat-chip"><strong>4.0</strong> GPA</span>
+											<span class="stat-chip"><strong>2+</strong> Yrs Industry</span>
+											<span class="stat-chip"><strong>IEEE</strong> WACV '25</span>
+										</div>
+
 										<ul class="actions">
-											<li><a href="work.html" class="button big">Learn More</a></li>
+											<li><a href="about.html" class="button big">About Me</a></li>
+											<li><a href="publications.html" class="button big">Publications</a></li>
 										</ul>
 									</div>
 									<span class="image object">
-										<img src="images/gayathri_image.jpeg" alt="" />
+										<img src="images/profile image 1.jpeg" alt="Gayathri Akkinapalli" />
 									</span>
 								</section>
 
-							
-							
+							<!-- Timeline Section -->
+								<section>
+									<h2>My Journey</h2>
+
+									<div class="timeline-centered">
+										<!-- Row 1: Cisco (left) | MS (right) -->
+										<div class="timeline-row">
+											<div class="timeline-left">
+												<div class="timeline-label">Research</div>
+												<div class="timeline-date">Jan 2025 - Jul 2025</div>
+												<div class="timeline-title">Graduate Researcher @ Cisco</div>
+												<p class="timeline-subtitle">Agentic RAG for LLM personalization</p>
+											</div>
+											<div class="timeline-right">
+												<div class="timeline-label">Education</div>
+												<div class="timeline-date">Aug 2023 - May 2025</div>
+												<div class="timeline-title">MS in Computer Science</div>
+												<p class="timeline-subtitle">UMass Amherst | GPA: 4.0/4.0</p>
+											</div>
+										</div>
+
+										<!-- Row 2: IESL (left) | empty (right) -->
+										<div class="timeline-row">
+											<div class="timeline-left">
+												<div class="timeline-label">Research</div>
+												<div class="timeline-date">Aug 2024 - Dec 2024</div>
+												<div class="timeline-title">Research Assistant @ IESL Lab</div>
+												<p class="timeline-subtitle">Machine translation under Prof. McCallum</p>
+											</div>
+											<div class="timeline-empty"></div>
+										</div>
+
+										<!-- Row 3: Carelon (left) | B.Tech (right) -->
+										<div class="timeline-row">
+											<div class="timeline-left">
+												<div class="timeline-label">Industry</div>
+												<div class="timeline-date">Jun 2021 - Jul 2023</div>
+												<div class="timeline-title">AI/ML Engineer @ Carelon</div>
+												<p class="timeline-subtitle">Healthcare AI & recommendations</p>
+											</div>
+											<div class="timeline-right">
+												<div class="timeline-label">Education</div>
+												<div class="timeline-date">2017 - 2021</div>
+												<div class="timeline-title">B.Tech in Computer Engineering</div>
+												<p class="timeline-subtitle">IIITDM Kurnool | GPA: 9.07/10</p>
+											</div>
+										</div>
+
+										<!-- Row 4: Internships (left) | empty (right) -->
+										<div class="timeline-row">
+											<div class="timeline-left">
+												<div class="timeline-label">Internships</div>
+												<div class="timeline-date">May 2020 - Sep 2020</div>
+												<div class="timeline-title">AI Intern @ IIT Kharagpur & C-DAC</div>
+												<p class="timeline-subtitle">Computer vision & medical imaging</p>
+											</div>
+											<div class="timeline-empty"></div>
+										</div>
+									</div>
+								</section>
+
+							<!-- Areas of Expertise & Interests -->
+								<section>
+									<h2>Areas of Expertise & Interests</h2>
+									<div class="features">
+										<article>
+											<span class="icon solid fa-robot"></span>
+											<div class="content">
+												<h3>Large Language Models</h3>
+												<p>Fine-tuning, alignment, safety, and personalization using RLHF, DPO, and LoRA techniques.</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-project-diagram"></span>
+											<div class="content">
+												<h3>RAG & Agentic Systems</h3>
+												<p>Multi-agent architectures, knowledge retrieval, and autonomous AI pipelines.</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-brain"></span>
+											<div class="content">
+												<h3>Reinforcement Learning</h3>
+												<p>Policy optimization, actor-critic methods, and sequential decision-making.</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-chart-bar"></span>
+											<div class="content">
+												<h3>Predictive Analytics</h3>
+												<p>Healthcare analytics, recommendation systems, and time-series forecasting.</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-running"></span>
+											<div class="content">
+												<h3>Generative AI</h3>
+												<p>Human motion synthesis, text generation, GANs, and diffusion models.</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-eye"></span>
+											<div class="content">
+												<h3>Computer Vision</h3>
+												<p>Object detection, medical imaging, and visual understanding systems.</p>
+											</div>
+										</article>
+									</div>
+								</section>
+
 						</div>
 					</div>
 
@@ -77,19 +336,19 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="work.html">Work Experience</a></li>
+										<li><a href="index.html" class="menu-active">Home</a></li>
+										<li><a href="about.html">About Me</a></li>
+										<li><a href="work.html">Experience</a></li>
 										<li><a href="publications.html">Publications</a></li>
-										<li><a href="project.html">Project</a></li>
-										<li><a href="others.html">Miscellaneous</a></li>
-										<li><a href="images/Gayathri_akki.pdf">CV</a></li>
-										
+										<li><a href="project.html">Projects</a></li>
+										<li><a href="others.html">Education & Awards</a></li>
+										<li><a href="images/Gayathri_Akkinapalli_MLE.pdf">CV</a></li>
 									</ul>
 								</nav>
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy; 2023 Gayathri Akkinapalli. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+									<p class="copyright">&copy; 2025 Gayathri Akkinapalli. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 								</footer>
 
 						</div>
