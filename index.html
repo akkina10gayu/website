@@ -140,6 +140,47 @@
 				color: #f56a6a !important;
 				font-weight: 600;
 			}
+			.tagline {
+				font-size: 1.1em;
+				color: #f56a6a;
+				font-style: italic;
+				margin: -10px 0 20px 0;
+				font-weight: 500;
+			}
+			.beyond-ml {
+				margin-top: 20px;
+				padding: 12px 15px;
+				background: rgba(245, 106, 106, 0.03);
+				border-radius: 6px;
+				border-left: 2px solid #f56a6a;
+			}
+			.beyond-ml h4 {
+				font-size: 0.8em;
+				text-transform: uppercase;
+				letter-spacing: 1.2px;
+				color: #aaa;
+				margin: 0 0 8px 0;
+				font-weight: 800;
+			}
+			.interests-grid {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px;
+			}
+			.interests-grid span {
+				font-size: 0.95em;
+				color: #777;
+				padding: 0;
+				line-height: 1.4;
+			}
+			#banner .image.object img {
+				max-height: 550px;
+				object-fit: cover;
+			}
+			#banner .actions {
+				justify-content: center;
+				gap: 20px;
+			}
 			@media screen and (max-width: 736px) {
 				.timeline-centered::before {
 					left: 20px;
@@ -185,6 +226,7 @@
 								<section id="banner">
 									<div class="content">
 										<h1>Hi, I'm Gayathri</h1>
+										<p class="tagline">"Turning research ideas into real, reliable ML systems."</p>
 										<p class="highlight-box">
 											<strong>AI/ML Engineer</strong> who loves turning ambitious ideas into systems that actually work. I'm driven by the challenge of making AI smarter, safer, and more useful—whether that means teaching language models to understand us better or building pipelines that scale to real users. Always learning, always building.
 										</p>
@@ -201,6 +243,19 @@
 											<li><a href="about.html" class="button big">About Me</a></li>
 											<li><a href="https://scholar.google.com/citations?hl=en&user=rKOPEUIAAAAJ" class="button big">Publications</a></li>
 										</ul>
+
+										<!-- Beyond ML -->
+										<div class="beyond-ml">
+											<h4>Beyond ML</h4>
+											<div class="interests-grid">
+												<span>🏸 Badminton</span>
+												<span>🍳 Cooking</span>
+												<span>💃 Dancing</span>
+												<span>📸 Photography</span>
+												<span>📚 Research writing</span>
+												<span>✈️ Traveling</span>
+											</div>
+										</div>
 									</div>
 									<span class="image object">
 										<img src="images/profile image 1.jpeg" alt="Gayathri Akkinapalli" />
