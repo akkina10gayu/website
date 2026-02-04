@@ -15,6 +15,25 @@
 				color: #f56a6a !important;
 				font-weight: 600;
 			}
+			#search.alt:before,
+			#search.alt::before,
+			#search.alt:after,
+			#search.alt::after,
+			#search.alt form:before,
+			#search.alt form::before,
+			#search.alt form:after,
+			#search.alt form::after,
+			#search.alt input:before,
+			#search.alt input::before,
+			#search.alt input:after,
+			#search.alt input::after {
+				display: none !important;
+				content: none !important;
+			}
+			#search.alt input,
+			#search.alt form {
+				background-image: none !important;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -190,9 +209,12 @@
 						<div class="inner">
 
 							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
+								<section id="search" class="alt" style="position: relative;">
+									<form method="post" action="#" onsubmit="searchPage(); return false;" style="position: relative;">
+										<input type="text" name="query" id="query" placeholder="Search" style="padding-right: 2.5em;" />
+										<button type="submit" style="position: absolute; right: 0.5em; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #7f888f; padding: 0; width: 2.1em; height: 2.1em; display: flex; align-items: center; justify-content: center; outline: none;">
+											<i class="icon solid fa-search" style="font-size: 1.3em;"></i>
+										</button>
 									</form>
 								</section>
 
@@ -228,6 +250,63 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- Search Functionality -->
+		<script>
+			function searchPage() {
+				removeHighlights();
+				var searchText = document.getElementById('query').value.trim();
+				if (searchText === '') return;
+				highlightText(searchText);
+			}
+
+			function removeHighlights() {
+				var highlights = document.querySelectorAll('.search-highlight');
+				highlights.forEach(function(highlight) {
+					var parent = highlight.parentNode;
+					parent.replaceChild(document.createTextNode(highlight.textContent), highlight);
+					parent.normalize();
+				});
+			}
+
+			function highlightText(searchText) {
+				var mainContent = document.getElementById('main');
+				if (!mainContent) return;
+				var regex = new RegExp('(' + escapeRegex(searchText) + ')', 'gi');
+				highlightInElement(mainContent, regex);
+				var firstHighlight = document.querySelector('.search-highlight');
+				if (firstHighlight) {
+					firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+				}
+			}
+
+			function highlightInElement(element, regex) {
+				var childNodes = element.childNodes;
+				for (var i = 0; i < childNodes.length; i++) {
+					var node = childNodes[i];
+					if (node.nodeType === 3) {
+						var text = node.nodeValue;
+						if (regex.test(text)) {
+							var span = document.createElement('span');
+							span.innerHTML = text.replace(regex, '<span class="search-highlight" style="background-color: #f56a6a; color: white; padding: 2px 4px; border-radius: 3px;">$1</span>');
+							element.replaceChild(span, node);
+						}
+					} else if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') {
+						highlightInElement(node, regex);
+					}
+				}
+			}
+
+			function escapeRegex(string) {
+				return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+			}
+
+			document.getElementById('query').addEventListener('input', function() {
+				if (this.value === '') {
+					removeHighlights();
+				}
+			});
+		</script>
 
 	</body>
 </html>
