@@ -259,4 +259,17 @@
 
 			});
 
+	// Auto-detect CV PDF in images folder.
+		fetch('images/')
+			.then(function(r) { return r.ok ? r.text() : Promise.reject(); })
+			.then(function(html) {
+				var match = html.match(/href="([^"]*\.pdf)"/i);
+				if (match) {
+					var pdfName = match[1];
+					var pdfPath = pdfName.indexOf('images/') === 0 ? pdfName : 'images/' + pdfName;
+					$('.cv-link').attr('href', pdfPath);
+				}
+			})
+			.catch(function() {});
+
 })(jQuery);
