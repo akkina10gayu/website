@@ -79,11 +79,47 @@
 			@media screen and (max-width: 736px) {
 				.about-intro {
 					flex-direction: column;
+					gap: 20px;
 				}
 				.about-intro .image {
 					flex: none;
-					width: 200px;
+					width: 180px;
 					margin: 0 auto;
+				}
+				.about-text {
+					text-align: center;
+				}
+				.about-text p {
+					text-align: left;
+				}
+				.quote-box {
+					padding: 18px;
+					font-size: 0.9em;
+				}
+				.interest-grid {
+					grid-template-columns: 1fr;
+					gap: 12px;
+				}
+				.interest-card {
+					padding: 15px;
+				}
+				.skill-tags {
+					gap: 6px;
+				}
+				.skill-tag {
+					font-size: 0.8em;
+					padding: 5px 10px;
+				}
+			}
+			@media screen and (max-width: 480px) {
+				.about-intro .image {
+					width: 150px;
+				}
+				.interest-card h4 {
+					font-size: 0.95em;
+				}
+				.interest-card p {
+					font-size: 0.82em;
 				}
 			}
 			.menu-active {

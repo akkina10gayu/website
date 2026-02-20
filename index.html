@@ -242,23 +242,134 @@
 			#search.alt form {
 				background-image: none !important;
 			}
+			/* Tablet breakpoint */
+			@media screen and (max-width: 980px) {
+				#banner .image.object {
+					width: 35%;
+				}
+				#banner .image.object img {
+					max-height: 300px;
+				}
+				#banner .content {
+					width: 65%;
+				}
+			}
+
+			/* Portrait / mobile: stack banner vertically */
+			@media screen and (max-width: 736px), screen and (orientation: portrait) and (max-width: 980px) {
+				#banner .image.object {
+					width: 50%;
+					max-width: 220px;
+					margin: 0 auto 1.5em auto;
+				}
+				#banner .image.object img {
+					max-height: 260px;
+				}
+				#banner .content {
+					width: 100%;
+					text-align: center;
+				}
+				#banner .content h1 {
+					font-size: 1.8em;
+				}
+				.tagline {
+					font-size: 0.9em;
+					margin: 0 0 14px 0;
+				}
+				.highlight-box {
+					padding: 12px 14px;
+					margin: 14px 0;
+					font-size: 0.9em;
+					text-align: left;
+				}
+				.stats-row {
+					justify-content: center;
+					gap: 8px;
+					margin: 14px 0;
+				}
+				.stat-chip {
+					flex: 0 1 auto;
+					padding: 6px 12px;
+					font-size: 0.8em;
+				}
+				#banner .actions {
+					justify-content: center;
+					margin: 14px 0;
+				}
+				#banner .actions .button.big {
+					padding: 0 1.5em;
+					font-size: 0.85em;
+				}
+				.beyond-ml {
+					margin-top: 14px;
+					text-align: left;
+				}
+				.featured-project {
+					margin-top: 14px;
+					justify-content: center;
+				}
+				.featured-project p {
+					font-size: 0.8em;
+				}
+			}
+
+			/* Small phones */
+			@media screen and (max-width: 480px) {
+				#banner .image.object {
+					width: 60%;
+					max-width: 180px;
+				}
+				#banner .image.object img {
+					max-height: 220px;
+				}
+				#banner .content h1 {
+					font-size: 1.5em;
+				}
+				.stats-row {
+					gap: 6px;
+				}
+				.stat-chip {
+					padding: 5px 10px;
+					font-size: 0.75em;
+				}
+				.highlight-box {
+					font-size: 0.85em;
+					padding: 10px 12px;
+				}
+				.interests-grid {
+					gap: 6px;
+				}
+				.interests-grid span {
+					font-size: 0.85em;
+				}
+			}
+
+			/* Timeline mobile */
 			@media screen and (max-width: 736px) {
 				.timeline-centered::before {
 					left: 20px;
 				}
 				.timeline-row {
 					flex-direction: column;
+					margin-bottom: 25px;
 				}
 				.timeline-row::before {
 					left: 20px;
 				}
 				.timeline-left, .timeline-right {
-					width: 100%;
+					width: calc(100% - 50px);
 					text-align: left;
 					margin-left: 40px;
+					padding: 12px 15px;
 				}
 				.timeline-empty {
 					display: none;
+				}
+				.timeline-title {
+					font-size: 0.9em;
+				}
+				.timeline-subtitle {
+					font-size: 0.82em;
 				}
 			}
 		</style>
