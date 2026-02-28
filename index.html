@@ -84,12 +84,59 @@
 				margin-bottom: 8px;
 			}
 			.highlight-box {
-				background: #f5f5f5;
-				padding: 15px 18px;
-				border-radius: 8px;
-				margin: 18px 0;
-				border-left: 4px solid #f56a6a;
-				font-size: 0.95em;
+				background: #1e1e2e;
+				color: #cdd6f4;
+				padding: 22px 24px;
+				border-radius: 10px;
+				margin: 22px 0;
+				border-left: none;
+				border: 1px solid #313244;
+				font-size: 1.05em;
+				font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+				line-height: 1.7;
+				position: relative;
+				box-shadow: 0 4px 24px rgba(0,0,0,0.18), 0 1.5px 6px rgba(0,0,0,0.10);
+				overflow: hidden;
+			}
+			.highlight-box::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 3px;
+				background: linear-gradient(90deg, #f56a6a, #fab387, #f9e2af, #a6e3a1, #89b4fa, #cba6f7);
+				border-radius: 10px 10px 0 0;
+			}
+			.highlight-box .window-dots {
+				display: flex;
+				gap: 7px;
+				margin-bottom: 14px;
+				padding-top: 4px;
+			}
+			.highlight-box .window-dots span {
+				width: 11px;
+				height: 11px;
+				border-radius: 50%;
+				display: inline-block;
+			}
+			.highlight-box .window-dots .dot-red { background: #f38ba8; }
+			.highlight-box .window-dots .dot-yellow { background: #f9e2af; }
+			.highlight-box .window-dots .dot-green { background: #a6e3a1; }
+			.highlight-box strong {
+				color: #f56a6a;
+				font-weight: 700;
+			}
+			.highlight-box .code-comment {
+				color: #6c7086;
+				font-style: italic;
+			}
+			.highlight-box .code-signature {
+				display: block;
+				margin-top: 10px;
+				color: #89b4fa;
+				font-size: 0.88em;
+				letter-spacing: 0.3px;
 			}
 			.stats-row {
 				display: flex;
@@ -179,23 +226,31 @@
 				line-height: 1.4;
 			}
 			.featured-project {
-				margin-top: 18px;
-				padding: 8px 12px;
+				margin-top: 14px;
+				padding: 10px 14px;
 				background: rgba(245, 106, 106, 0.06);
 				border-radius: 6px;
 				display: flex;
+				flex-direction: column;
 				align-items: center;
-				gap: 10px;
+				gap: 4px;
+				width: 100%;
+				text-align: center;
 			}
-			.featured-project .fp-icon {
+			.featured-project .fp-label {
+				font-size: 0.8em;
+				color: #666;
+				display: flex;
+				align-items: center;
+				gap: 6px;
+				line-height: 1.4;
+			}
+			.featured-project .fp-label .fp-icon {
 				font-size: 1.1em;
 				color: #f56a6a;
-				flex-shrink: 0;
 			}
-			.featured-project p {
-				margin: 0;
+			.featured-project .fp-link {
 				font-size: 0.85em;
-				color: #666;
 				line-height: 1.4;
 			}
 			.featured-project a {
@@ -207,10 +262,17 @@
 			.featured-project a:hover {
 				border-bottom-style: solid;
 			}
-			#banner .image.object {
+			#banner .image-col {
 				width: 28%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
 			}
-			#banner .image.object img {
+			#banner .image-col .image.object {
+				width: 100%;
+			}
+			#banner .image-col .image.object img {
 				max-height: 350px;
 				object-fit: cover;
 				border-radius: 8px;
@@ -244,10 +306,10 @@
 			}
 			/* Tablet breakpoint */
 			@media screen and (max-width: 980px) {
-				#banner .image.object {
+				#banner .image-col {
 					width: 35%;
 				}
-				#banner .image.object img {
+				#banner .image-col .image.object img {
 					max-height: 300px;
 				}
 				#banner .content {
@@ -257,12 +319,12 @@
 
 			/* Portrait / mobile: stack banner vertically */
 			@media screen and (max-width: 736px), screen and (orientation: portrait) and (max-width: 980px) {
-				#banner .image.object {
+				#banner .image-col {
 					width: 50%;
 					max-width: 220px;
 					margin: 0 auto 1.5em auto;
 				}
-				#banner .image.object img {
+				#banner .image-col .image.object img {
 					max-height: 260px;
 				}
 				#banner .content {
@@ -277,10 +339,11 @@
 					margin: 0 0 14px 0;
 				}
 				.highlight-box {
-					padding: 12px 14px;
-					margin: 14px 0;
-					font-size: 0.9em;
+					padding: 16px 16px;
+					margin: 16px 0;
+					font-size: 0.92em;
 					text-align: left;
+					line-height: 1.6;
 				}
 				.stats-row {
 					justify-content: center;
@@ -305,21 +368,23 @@
 					text-align: left;
 				}
 				.featured-project {
-					margin-top: 14px;
-					justify-content: center;
+					margin-top: 12px;
 				}
-				.featured-project p {
+				.featured-project .fp-label {
+					font-size: 0.75em;
+				}
+				.featured-project .fp-link {
 					font-size: 0.8em;
 				}
 			}
 
 			/* Small phones */
 			@media screen and (max-width: 480px) {
-				#banner .image.object {
+				#banner .image-col {
 					width: 60%;
 					max-width: 180px;
 				}
-				#banner .image.object img {
+				#banner .image-col .image.object img {
 					max-height: 220px;
 				}
 				#banner .content h1 {
@@ -334,7 +399,8 @@
 				}
 				.highlight-box {
 					font-size: 0.85em;
-					padding: 10px 12px;
+					padding: 14px 14px;
+					line-height: 1.55;
 				}
 				.interests-grid {
 					gap: 6px;
@@ -399,9 +465,12 @@
 									<div class="content">
 										<h1>Hi, I'm Gayathri</h1>
 										<p class="tagline">"Turning research ideas into real, reliable ML systems."</p>
-										<p class="highlight-box">
-											<strong>AI/ML Engineer</strong> who loves turning ambitious ideas into systems that actually work. I'm driven by the challenge of making AI smarter, safer, and more useful—whether that means teaching language models to understand us better or building pipelines that scale to real users.<br/>— Always learning, always building.
-										</p>
+										<div class="highlight-box">
+											<div class="window-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
+											<span class="code-comment">// about_me.js</span><br/>
+											<strong>AI/ML Engineer</strong> who loves turning ambitious ideas into systems that actually work. I'm driven by the challenge of making AI smarter, safer, and more useful—whether that means teaching language models to understand us better or building pipelines that scale to real users.
+											<span class="code-signature">— Always learning, always building.</span>
+										</div>
 
 										<!-- Compact Stats -->
 										<div class="stats-row">
@@ -429,15 +498,16 @@
 											</div>
 										</div>
 
-										<!-- Featured Project -->
+									</div>
+									<div class="image-col">
+										<span class="image object">
+											<img src="images/profile image 1.jpeg" alt="Gayathri Akkinapalli" />
+										</span>
 										<div class="featured-project">
-											<span class="fp-icon icon solid fa-rocket"></span>
-											<p>Latest build: <a href="https://github.com/akkina10gayu/EduNotes-Multi-Agent-Study-Assistant" target="_blank">EduNotes — Multi-Agent AI Study Assistant</a></p>
+											<span class="fp-label"><span class="fp-icon icon solid fa-rocket"></span> Check out my latest build</span>
+											<span class="fp-link"><a href="https://github.com/akkina10gayu/EduNotes-Multi-Agent-Study-Assistant" target="_blank">EduNotes — Multi-Agent AI Study Assistant</a></span>
 										</div>
 									</div>
-									<span class="image object">
-										<img src="images/profile image 1.jpeg" alt="Gayathri Akkinapalli" />
-									</span>
 								</section>
 
 							<!-- Timeline Section -->
