@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/dark-theme.css" />
 		<style>
 			.timeline-centered {
 				position: relative;
@@ -42,13 +43,14 @@
 				height: 16px;
 				border-radius: 50%;
 				background: #f56a6a;
-				border: 3px solid #fff;
+				border: 3px solid #11111b;
+				box-shadow: 0 0 8px rgba(245, 106, 106, 0.3);
 				z-index: 1;
 			}
 			.timeline-left, .timeline-right {
 				width: 45%;
 				padding: 15px 20px;
-				background: #f9f9f9;
+				background: #252536;
 				border-radius: 8px;
 			}
 			.timeline-left {
@@ -72,7 +74,7 @@
 				margin-bottom: 3px;
 			}
 			.timeline-subtitle {
-				color: #666;
+				color: #a6adc8;
 				font-size: 0.9em;
 				margin: 0;
 			}
@@ -80,7 +82,7 @@
 				font-size: 0.75em;
 				text-transform: uppercase;
 				letter-spacing: 1px;
-				color: #999;
+				color: #6c7086;
 				margin-bottom: 8px;
 			}
 			.highlight-box {
@@ -146,11 +148,11 @@
 				flex-wrap: wrap;
 			}
 			.stat-chip {
-				background: #f9f9f9;
+				background: #252536;
 				padding: 8px 14px;
 				border-radius: 20px;
 				font-size: 0.85em;
-				border: 1px solid #e0e0e0;
+				border: 1px solid #313244;
 				display: inline-flex;
 				align-items: center;
 				gap: 6px;
@@ -164,15 +166,15 @@
 			.focus-section {
 				margin: 20px 0;
 				padding: 15px;
-				background: #fff;
+				background: #1e1e2e;
 				border-radius: 8px;
-				border: 1px solid #e8e8e8;
+				border: 1px solid #313244;
 			}
 			.focus-label {
 				font-size: 0.8em;
 				text-transform: uppercase;
 				letter-spacing: 1px;
-				color: #999;
+				color: #6c7086;
 				margin-bottom: 10px;
 			}
 			.focus-tags {
@@ -202,7 +204,7 @@
 			.beyond-ml {
 				margin-top: 18px;
 				padding: 10px 12px;
-				background: rgba(245, 106, 106, 0.03);
+				background: rgba(245, 106, 106, 0.06);
 				border-radius: 6px;
 				border-left: 2px solid #f56a6a;
 			}
@@ -210,7 +212,7 @@
 				font-size: 0.8em;
 				text-transform: uppercase;
 				letter-spacing: 1.2px;
-				color: #aaa;
+				color: #6c7086;
 				margin: 0 0 8px 0;
 				font-weight: 800;
 			}
@@ -221,14 +223,14 @@
 			}
 			.interests-grid span {
 				font-size: 0.95em;
-				color: #777;
+				color: #a6adc8;
 				padding: 0;
 				line-height: 1.4;
 			}
 			.featured-project {
 				margin-top: 14px;
 				padding: 10px 14px;
-				background: rgba(245, 106, 106, 0.06);
+				background: rgba(245, 106, 106, 0.08);
 				border-radius: 6px;
 				display: flex;
 				flex-direction: column;
@@ -239,7 +241,7 @@
 			}
 			.featured-project .fp-label {
 				font-size: 0.8em;
-				color: #666;
+				color: #a6adc8;
 				display: flex;
 				align-items: center;
 				gap: 6px;
@@ -271,6 +273,7 @@
 			}
 			#banner .image-col .image.object {
 				width: 100%;
+				display: block;
 			}
 			#banner .image-col .image.object img {
 				max-height: 350px;
@@ -322,7 +325,12 @@
 				#banner .image-col {
 					width: 50%;
 					max-width: 220px;
-					margin: 0 auto 1.5em auto;
+					margin: 0 auto 1em auto;
+				}
+				#banner .image-col .image.object {
+					height: auto;
+					min-height: 0;
+					max-height: none;
 				}
 				#banner .image-col .image.object img {
 					max-height: 260px;
@@ -368,7 +376,7 @@
 					text-align: left;
 				}
 				.featured-project {
-					margin-top: 12px;
+					margin-top: 8px;
 				}
 				.featured-project .fp-label {
 					font-size: 0.75em;
@@ -410,6 +418,16 @@
 				}
 			}
 
+			/* Features: center icons when stacked on small screens */
+			@media screen and (max-width: 480px) {
+				.features article {
+					align-items: center;
+				}
+				.features article .content {
+					text-align: center;
+				}
+			}
+
 			/* Timeline mobile */
 			@media screen and (max-width: 736px) {
 				.timeline-centered::before {
@@ -427,6 +445,9 @@
 					text-align: left;
 					margin-left: 40px;
 					padding: 12px 15px;
+				}
+				.timeline-right {
+					margin-top: 12px;
 				}
 				.timeline-empty {
 					display: none;
@@ -642,7 +663,7 @@
 								<section id="search" class="alt" style="position: relative;">
 									<form method="post" action="#" onsubmit="searchPage(); return false;" style="position: relative;">
 										<input type="text" name="query" id="query" placeholder="Search" style="padding-right: 2.5em;" />
-										<button type="submit" style="position: absolute; right: 0.5em; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #7f888f; padding: 0; width: 2.1em; height: 2.1em; display: flex; align-items: center; justify-content: center; outline: none;">
+										<button type="submit" style="position: absolute; right: 0.5em; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #6c7086; padding: 0; width: 2.1em; height: 2.1em; display: flex; align-items: center; justify-content: center; outline: none;">
 											<i class="icon solid fa-search" style="font-size: 1.3em;"></i>
 										</button>
 									</form>

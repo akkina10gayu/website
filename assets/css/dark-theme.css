@@ -1,0 +1,433 @@
+/* ==========================================================================
+   Dark Theme — Catppuccin Mocha-inspired
+   Loaded after main.css to override light theme defaults
+   ========================================================================== */
+
+/* --- Color Tokens ---
+   Base:     #11111b   Body background
+   Mantle:   #181825   Sidebar background
+   Surface0: #1e1e2e   Search area, card surfaces
+   Surface1: #252536   Elevated cards, chips, tags
+   Surface2: #313244   All borders
+   Overlay0: #6c7086   Muted/placeholder text
+   Subtext0: #a6adc8   Body text
+   Text:     #cdd6f4   Headings, bold text
+   Accent:   #f56a6a   Coral (kept as-is)
+   ========================================================================== */
+
+/* --- Body & Typography --- */
+
+body {
+	background-color: #11111b;
+	color: #a6adc8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #cdd6f4;
+}
+
+strong, b {
+	color: #cdd6f4;
+}
+
+a {
+	color: #f56a6a;
+}
+
+a:hover {
+	color: #f9a0a0;
+}
+
+p, li, dd, dt, td, th, label, span {
+	color: #a6adc8;
+}
+
+em, i:not(.icon):not([class*="fa-"]) {
+	color: #a6adc8;
+}
+
+/* --- Tighter spacing (overrides main.css defaults) --- */
+
+p {
+	margin-bottom: 1em;
+}
+
+ul, ol {
+	margin-bottom: 1.2em;
+}
+
+h2 {
+	margin-bottom: 0.6em;
+}
+
+h3 {
+	margin-bottom: 0.4em;
+}
+
+h4 {
+	margin-bottom: 0.3em;
+}
+
+hr {
+	margin: 1.5em 0;
+}
+
+hr.major {
+	margin: 1.8em 0;
+}
+
+/* --- Forms --- */
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="url"],
+input[type="number"],
+textarea,
+select {
+	background: #1e1e2e;
+	border-color: #313244;
+	color: #cdd6f4;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+	border-color: #f56a6a;
+	box-shadow: 0 0 0 1px #f56a6a;
+}
+
+input::placeholder,
+textarea::placeholder {
+	color: #6c7086;
+}
+
+/* --- Buttons --- */
+
+.button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button.primary {
+	background-color: transparent;
+	border-color: #f56a6a;
+	color: #f56a6a !important;
+}
+
+.button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+	background-color: rgba(245, 106, 106, 0.1);
+	box-shadow: 0 0 12px rgba(245, 106, 106, 0.2);
+}
+
+.button.primary,
+input[type="submit"].primary {
+	background-color: #f56a6a;
+	color: #11111b !important;
+	border-color: #f56a6a;
+}
+
+.button.primary:hover,
+input[type="submit"].primary:hover {
+	background-color: #f9a0a0;
+	box-shadow: 0 0 12px rgba(245, 106, 106, 0.3);
+}
+
+/* --- Sidebar --- */
+
+#sidebar {
+	background: #181825;
+}
+
+#sidebar .inner {
+	background: transparent;
+}
+
+#sidebar > .inner {
+	border-left-color: #313244;
+}
+
+/* Search area — must match #sidebar > .inner > .alt specificity from main.css */
+#sidebar > .inner > .alt {
+	background-color: #181825;
+}
+
+#search.alt {
+	background: #181825;
+	border-color: #313244;
+}
+
+#search.alt input[type="text"] {
+	background: #1e1e2e;
+	border-color: #313244;
+	color: #cdd6f4;
+}
+
+/* --- Menu --- */
+
+#menu ul li a {
+	color: #a6adc8;
+	border-top-color: #313244;
+}
+
+#menu ul li a:hover {
+	color: #f56a6a;
+}
+
+#menu ul li:first-child a {
+	border-top-color: transparent;
+}
+
+#menu header.major h2 {
+	color: #cdd6f4;
+}
+
+nav#menu ul li {
+	border-top-color: #313244;
+}
+
+/* --- Header --- */
+
+#header {
+	border-bottom-color: #313244;
+}
+
+#header a.logo strong {
+	color: #cdd6f4;
+}
+
+#header .icons li a {
+	color: #f56a6a;
+}
+
+#header .icons li a:hover {
+	color: #f9a0a0;
+}
+
+/* --- Main content area --- */
+
+#main > .inner {
+	background: transparent;
+}
+
+/* --- Features grid (Areas of Expertise) --- */
+
+.features article {
+	border-top-color: #313244;
+}
+
+.features article:nth-child(2n) {
+	border-left-color: #313244;
+}
+
+.features article .icon {
+	color: #f56a6a;
+}
+
+.features article span.icon {
+	background: #1e1e2e;
+	border-color: #313244;
+}
+
+.features article span.icon::before {
+	color: #f56a6a;
+}
+
+.features article .content h3 {
+	color: #cdd6f4;
+}
+
+.features article .content p {
+	color: #a6adc8;
+}
+
+/* --- Section dividers --- */
+
+hr,
+hr.major {
+	border-top-color: #313244;
+}
+
+/* --- Tables --- */
+
+table {
+	border-collapse: collapse;
+}
+
+table thead {
+	border-bottom-color: #313244;
+}
+
+table tbody tr {
+	border-color: #313244;
+}
+
+table tbody tr:nth-child(2n+1) {
+	background-color: rgba(30, 30, 46, 0.5);
+}
+
+table th {
+	color: #cdd6f4;
+}
+
+table td {
+	color: #a6adc8;
+}
+
+/* --- Lists --- */
+
+ul.alt li {
+	border-top-color: #313244;
+}
+
+ol li {
+	color: #a6adc8;
+}
+
+/* --- Blockquotes --- */
+
+blockquote {
+	border-left-color: #313244;
+	color: #6c7086;
+}
+
+/* --- Code --- */
+
+code {
+	background: #1e1e2e;
+	border-color: #313244;
+	color: #cdd6f4;
+}
+
+pre {
+	background: #1e1e2e;
+	border-color: #313244;
+	color: #cdd6f4;
+}
+
+/* --- Footer --- */
+
+#footer {
+	border-top-color: #313244;
+}
+
+#footer .copyright {
+	color: #6c7086;
+}
+
+#footer .copyright a {
+	color: #6c7086;
+}
+
+#footer .copyright a:hover {
+	color: #f56a6a;
+}
+
+/* --- Scrollbar --- */
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #11111b;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #313244;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #6c7086;
+}
+
+/* --- Selection highlight --- */
+
+::selection {
+	background: rgba(245, 106, 106, 0.3);
+	color: #cdd6f4;
+}
+
+::-moz-selection {
+	background: rgba(245, 106, 106, 0.3);
+	color: #cdd6f4;
+}
+
+/* --- Image borders --- */
+
+.image img,
+.image.object img {
+	border: 1px solid #313244;
+}
+
+/* --- Banner section --- */
+
+#banner .content h1 {
+	color: #cdd6f4;
+}
+
+#banner .content p {
+	color: #a6adc8;
+}
+
+/* --- Box --- */
+
+.box {
+	border-color: #313244;
+}
+
+/* --- Wrapper --- */
+
+#wrapper {
+	background: #11111b;
+}
+
+/* --- Mini post / post cards --- */
+
+.mini-posts article {
+	border-color: #313244;
+	background: #1e1e2e;
+}
+
+/* --- CV link --- */
+
+.cv-link {
+	color: #a6adc8 !important;
+}
+
+.cv-link:hover {
+	color: #f56a6a !important;
+}
+
+/* When cv-link is used on a .button, match other button colors */
+.button.cv-link {
+	color: #f56a6a !important;
+}
+
+.button.cv-link:hover {
+	color: #f56a6a !important;
+}
+
+/* --- Responsive: sidebar toggle button --- */
+
+@media screen and (max-width: 1280px) {
+	#sidebar {
+		background: #181825;
+	}
+
+	body.is-preload #sidebar {
+		background: #181825;
+	}
+}

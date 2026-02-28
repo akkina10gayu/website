@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/dark-theme.css" />
 		<style>
 			.about-intro {
 				display: flex;
@@ -40,11 +41,12 @@
 				gap: 8px;
 			}
 			.skill-tag {
-				background: #f5f5f5;
+				background: #252536;
 				padding: 6px 12px;
 				border-radius: 15px;
 				font-size: 0.85em;
-				border: 1px solid #e0e0e0;
+				border: 1px solid #313244;
+				color: #a6adc8;
 			}
 			.interest-grid {
 				display: grid;
@@ -53,28 +55,29 @@
 				margin: 20px 0;
 			}
 			.interest-card {
-				background: #f9f9f9;
+				background: #252536;
 				padding: 20px;
 				border-radius: 8px;
 				border-left: 3px solid #f56a6a;
 			}
 			.interest-card h4 {
 				margin-bottom: 10px;
-				color: #333;
+				color: #cdd6f4;
 			}
 			.interest-card p {
 				margin: 0;
 				font-size: 0.9em;
-				color: #666;
+				color: #a6adc8;
 			}
 			.quote-box {
-				background: linear-gradient(135deg, #f56a6a15, #f56a6a05);
+				background: linear-gradient(135deg, rgba(245, 106, 106, 0.1), rgba(245, 106, 106, 0.03));
 				padding: 25px;
 				border-radius: 8px;
 				margin: 30px 0;
 				font-style: italic;
 				text-align: center;
-				border: 1px solid #f56a6a30;
+				border: 1px solid rgba(245, 106, 106, 0.2);
+				color: #cdd6f4;
 			}
 			@media screen and (max-width: 736px) {
 				.about-intro {
@@ -175,9 +178,9 @@
 										</div>
 										<div class="about-text">
 											<h2>Hello! I'm Gayathri</h2>
-											<p>I'm an AI/ML Engineer who loves turning complex problems into elegant solutions. With a freshly minted Master's in Computer Science from UMass Amherst (perfect 4.0 GPA!), I bridge the gap between cutting-edge research and real-world applications.</p>
-											<p>My journey spans from building healthcare AI systems that help patients get better care, to researching how we can make language models safer and more personalized. I thrive at the intersection of innovation and impact.</p>
-											<p>When I'm not training models or debugging pipelines, you might find me exploring new research papers, mentoring fellow engineers, or occasionally setting Guinness World Records (yes, really—for Kuchipudi dance!).</p>
+											<p>I'm an AI/ML Engineer who loves turning ambitious ideas into systems that actually work. With a Master's in Computer Science from UMass Amherst (4.0 GPA), I bridge the gap between cutting-edge research and production-grade AI, from multi-agent systems and LLM personalization to generative models and healthcare intelligence.</p>
+											<p>I've built EduNotes, a multi-agent AI study assistant, and PerFine, an agentic framework developed at Cisco for LLM personalization. My work also covers LLM safety, human motion synthesis with LS-GAN (IEEE WACV '25), and machine translation. I spent two years at Carelon building healthcare AI that serves millions of users and helps patients get better care.</p>
+											<p>When I'm not designing multi-agent pipelines or fine-tuning models, you'll find me exploring new research papers and the latest in generative AI, mentoring fellow engineers, or occasionally setting Guinness World Records (yes, really—for Kuchipudi dance!).</p>
 										</div>
 									</div>
 
@@ -309,7 +312,7 @@
 								<section id="search" class="alt" style="position: relative;">
 									<form method="post" action="#" onsubmit="searchPage(); return false;" style="position: relative;">
 										<input type="text" name="query" id="query" placeholder="Search" style="padding-right: 2.5em;" />
-										<button type="submit" style="position: absolute; right: 0.5em; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #7f888f; padding: 0; width: 2.1em; height: 2.1em; display: flex; align-items: center; justify-content: center; outline: none;">
+										<button type="submit" style="position: absolute; right: 0.5em; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #6c7086; padding: 0; width: 2.1em; height: 2.1em; display: flex; align-items: center; justify-content: center; outline: none;">
 											<i class="icon solid fa-search" style="font-size: 1.3em;"></i>
 										</button>
 									</form>
