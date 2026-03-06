@@ -1,6 +1,6 @@
 # Hi there! 👋
 
-I'm **Gayathri Akkinapalli**, and I'm so glad you're here. This is my personal corner of the internet where I share my journey as an AI/ML Engineer passionate about Large Language Models, Retrieval-Augmented Generation systems, and making AI smarter and safer. Whether you stumbled upon this site by accident or came here intentionally, I hope you find something interesting!
+I'm **Gayathri Akkinapalli**, and I'm so glad you're here. This is [my personal corner of the internet](https://akkina10gayu.github.io/website/) where I share my journey as an AI/ML Engineer passionate about Large Language Models, Retrieval-Augmented Generation systems, and making AI smarter and safer. Whether you stumbled upon this site by accident or came here intentionally, I hope you find something interesting!
 
 ## What You'll Find Here
 
@@ -22,6 +22,7 @@ This website is crafted with care using:
 
 I'm always excited to connect with fellow researchers, AI enthusiasts, or anyone curious about machine learning. Feel free to reach out through:
 
+- **Website**: [akkina10gayu.github.io/website](https://akkina10gayu.github.io/website/)
 - **LinkedIn**: [linkedin.com/in/gayathri-akkinapalli](https://www.linkedin.com/in/gayathri-akkinapalli/)
 - **GitHub**: [@akkina10gayu](https://github.com/akkina10gayu)
 - **Google Scholar**: [My Research Profile](https://scholar.google.com/citations?hl=en&user=rKOPEUIAAAAJ)
