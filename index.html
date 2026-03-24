@@ -486,6 +486,92 @@
                     font-size: 0.82em;
                 }
             }
+
+            /* Timeline Grid — education boxes span their actual time coverage */
+            .timeline-grid {
+                display: grid;
+                grid-template-columns: 1fr 40px 1fr;
+                row-gap: 20px;
+                position: relative;
+                padding: 20px 0;
+                margin: 20px 0;
+            }
+            .timeline-grid::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 0;
+                bottom: 0;
+                width: 3px;
+                background: #f56a6a;
+                z-index: 0;
+            }
+            .tg-dot {
+                grid-column: 2;
+                display: flex;
+                justify-content: center;
+                padding-top: 15px;
+                position: relative;
+                z-index: 1;
+            }
+            .tg-dot::after {
+                content: "";
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background: #f56a6a;
+                border: 3px solid #11111b;
+                box-shadow: 0 0 8px rgba(245, 106, 106, 0.3);
+                flex-shrink: 0;
+            }
+            .timeline-grid .timeline-left {
+                grid-column: 1;
+                align-self: start;
+                width: 100%; /* override base 45% width */
+            }
+            .timeline-grid .timeline-right {
+                grid-column: 3;
+                align-self: stretch;
+                width: 100%; /* override base 45% width */
+            }
+            @media screen and (max-width: 736px) {
+                .timeline-grid {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    padding-left: 45px;
+                    margin: 20px 0;
+                }
+                .timeline-grid::before {
+                    left: 20px;
+                    transform: none;
+                }
+                .tg-dot {
+                    display: none;
+                }
+                .timeline-grid .timeline-left,
+                .timeline-grid .timeline-right {
+                    width: 100% !important;
+                    text-align: left;
+                    padding: 12px 15px;
+                    margin: 0;
+                    position: relative;
+                }
+                .timeline-grid .timeline-left::before,
+                .timeline-grid .timeline-right::before {
+                    content: "";
+                    position: absolute;
+                    left: -30px;
+                    top: 15px;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background: #f56a6a;
+                    border: 2px solid #11111b;
+                    box-shadow: 0 0 6px rgba(245, 106, 106, 0.3);
+                }
+            }
         </style>
     </head>
     <body class="is-preload">
@@ -640,112 +726,64 @@
                     <section>
                         <h2>My Journey</h2>
 
-                        <div class="timeline-centered">
-                            <!-- Row 0: Data Science Volunteer (left) | empty (right) -->
-                            <div class="timeline-row">
-                                <div class="timeline-left">
-                                    <div class="timeline-label">Current</div>
-                                    <div class="timeline-date">
-                                        Aug 2025 - Present
-                                    </div>
-                                    <div class="timeline-title">
-                                        Gen AI Engineer @ UMass Amherst
-                                    </div>
-                                    <p class="timeline-subtitle">
-                                        Building multi-agent AI study assistant
-                                    </p>
-                                </div>
-                                <div class="timeline-empty"></div>
+                        <div class="timeline-grid">
+                            <!-- Row 1: Gen AI (left) | dot | nothing (right) -->
+                            <div class="timeline-left" style="grid-row: 1;">
+                                <div class="timeline-label">Current</div>
+                                <div class="timeline-date">Aug 2025 - Present</div>
+                                <div class="timeline-title">Gen AI Engineer @ UMass Amherst</div>
+                                <p class="timeline-subtitle">Building multi-agent AI study assistants</p>
+                            </div>
+                            <div class="tg-dot" style="grid-row: 1;"></div>
+
+                            <!-- Row 2: Cisco (left) | dot | MS starts here, spans rows 2–3 -->
+                            <div class="timeline-left" style="grid-row: 2;">
+                                <div class="timeline-label">Research</div>
+                                <div class="timeline-date">Jan 2025 - Jul 2025</div>
+                                <div class="timeline-title">Graduate Researcher @ Cisco</div>
+                                <p class="timeline-subtitle">Agentic RAG for LLM personalization</p>
+                            </div>
+                            <div class="tg-dot" style="grid-row: 2;"></div>
+                            <!-- MS spans rows 2–3: covers Cisco + IESL work periods -->
+                            <div class="timeline-right" style="grid-row: 2 / 4;">
+                                <div class="timeline-label">Education</div>
+                                <div class="timeline-date">Aug 2023 - May 2025</div>
+                                <div class="timeline-title">MS in Computer Science</div>
+                                <p class="timeline-subtitle">UMass Amherst | GPA: 4.0/4.0</p>
                             </div>
 
-                            <!-- Row 1: Cisco (left) | MS (right) -->
-                            <div class="timeline-row">
-                                <div class="timeline-left">
-                                    <div class="timeline-label">Research</div>
-                                    <div class="timeline-date">
-                                        Jan 2025 - Jul 2025
-                                    </div>
-                                    <div class="timeline-title">
-                                        Graduate Researcher @ Cisco
-                                    </div>
-                                    <p class="timeline-subtitle">
-                                        Agentic RAG for LLM personalization
-                                    </p>
-                                </div>
-                                <div class="timeline-right">
-                                    <div class="timeline-label">Education</div>
-                                    <div class="timeline-date">
-                                        Aug 2023 - May 2025
-                                    </div>
-                                    <div class="timeline-title">
-                                        MS in Computer Science
-                                    </div>
-                                    <p class="timeline-subtitle">
-                                        UMass Amherst | GPA: 4.0/4.0
-                                    </p>
-                                </div>
+                            <!-- Row 3: IESL (left) | dot | MS still spans (right covered above) -->
+                            <div class="timeline-left" style="grid-row: 3;">
+                                <div class="timeline-label">Research</div>
+                                <div class="timeline-date">Aug 2024 - Dec 2024</div>
+                                <div class="timeline-title">Research Assistant @ IESL Lab</div>
+                                <p class="timeline-subtitle">Machine translation under Prof. McCallum</p>
                             </div>
+                            <div class="tg-dot" style="grid-row: 3;"></div>
 
-                            <!-- Row 2: IESL (left) | empty (right) -->
-                            <div class="timeline-row">
-                                <div class="timeline-left">
-                                    <div class="timeline-label">Research</div>
-                                    <div class="timeline-date">
-                                        Aug 2024 - Dec 2024
-                                    </div>
-                                    <div class="timeline-title">
-                                        Research Assistant @ IESL Lab
-                                    </div>
-                                    <p class="timeline-subtitle">
-                                        Machine translation under Prof. McCallum
-                                    </p>
-                                </div>
-                                <div class="timeline-empty"></div>
+                            <!-- Row 4: Carelon (left) | dot | B.Tech starts here, spans rows 4–5 -->
+                            <div class="timeline-left" style="grid-row: 4;">
+                                <div class="timeline-label">Industry</div>
+                                <div class="timeline-date">Jun 2021 - Jul 2023</div>
+                                <div class="timeline-title">AI/ML Engineer @ Carelon</div>
+                                <p class="timeline-subtitle">Healthcare AI & recommendations</p>
                             </div>
+                            <div class="tg-dot" style="grid-row: 4;"></div>
+                            <!-- Row 4 right: empty — no degree during Carelon (2021–2023), gap between B.Tech & MS -->
 
-                            <!-- Row 3: Carelon (left) | B.Tech (right) -->
-                            <div class="timeline-row">
-                                <div class="timeline-left">
-                                    <div class="timeline-label">Industry</div>
-                                    <div class="timeline-date">
-                                        Jun 2021 - Jul 2023
-                                    </div>
-                                    <div class="timeline-title">
-                                        AI/ML Engineer @ Carelon
-                                    </div>
-                                    <p class="timeline-subtitle">
-                                        Healthcare AI & recommendations
-                                    </p>
-                                </div>
-                                <div class="timeline-right">
-                                    <div class="timeline-label">Education</div>
-                                    <div class="timeline-date">2017 - 2021</div>
-                                    <div class="timeline-title">
-                                        B.Tech in Computer Engineering
-                                    </div>
-                                    <p class="timeline-subtitle">
-                                        IIITDM Kurnool | GPA: 9.07/10
-                                    </p>
-                                </div>
+                            <!-- Row 5: Internships (left) | dot | B.Tech (right, single row — degree was concurrent with internships) -->
+                            <div class="timeline-left" style="grid-row: 5;">
+                                <div class="timeline-label">Internships</div>
+                                <div class="timeline-date">May 2020 - Sep 2020</div>
+                                <div class="timeline-title">AI Intern @ IIT Kharagpur & C-DAC</div>
+                                <p class="timeline-subtitle">Computer vision & medical imaging</p>
                             </div>
-
-                            <!-- Row 4: Internships (left) | empty (right) -->
-                            <div class="timeline-row">
-                                <div class="timeline-left">
-                                    <div class="timeline-label">
-                                        Internships
-                                    </div>
-                                    <div class="timeline-date">
-                                        May 2020 - Sep 2020
-                                    </div>
-                                    <div class="timeline-title">
-                                        AI Intern @ IIT Kharagpur & C-DAC
-                                    </div>
-                                    <p class="timeline-subtitle">
-                                        Computer vision & medical imaging
-                                    </p>
-                                </div>
-                                <div class="timeline-empty"></div>
+                            <div class="tg-dot" style="grid-row: 5;"></div>
+                            <div class="timeline-right" style="grid-row: 5;">
+                                <div class="timeline-label">Education</div>
+                                <div class="timeline-date">2017 - 2021</div>
+                                <div class="timeline-title">B.Tech in Computer Engineering</div>
+                                <p class="timeline-subtitle">IIITDM Kurnool | GPA: 9.07/10</p>
                             </div>
                         </div>
                     </section>
