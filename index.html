@@ -535,6 +535,11 @@
                 align-self: stretch;
                 width: 100%; /* override base 45% width */
             }
+            .tg-year-anchor {
+                background: transparent;
+                padding: 4px 20px 0;
+                min-height: 36px;
+            }
             @media screen and (max-width: 736px) {
                 .timeline-grid {
                     display: flex;
@@ -779,12 +784,20 @@
                                 <p class="timeline-subtitle">Computer vision & medical imaging</p>
                             </div>
                             <div class="tg-dot" style="grid-row: 5;"></div>
-                            <div class="timeline-right" style="grid-row: 5;">
+                            <!-- B.Tech spans rows 5–6 to cover full 2017–2021 degree period -->
+
+                            <div class="timeline-right" style="grid-row: 5 / 7;">
                                 <div class="timeline-label">Education</div>
                                 <div class="timeline-date">2017 - 2021</div>
                                 <div class="timeline-title">B.Tech in Computer Engineering</div>
                                 <p class="timeline-subtitle">IIITDM Kurnool | GPA: 9.07/10</p>
                             </div>
+
+                            <!-- Row 6: 2017 start anchor — grounds the timeline at B.Tech start year -->
+                            <div class="timeline-left tg-year-anchor" style="grid-row: 6;">
+                                <div class="timeline-label">2017</div>
+                            </div>
+                            <div class="tg-dot" style="grid-row: 6;"></div>
                         </div>
                     </section>
 
