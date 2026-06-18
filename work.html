@@ -114,56 +114,53 @@
 
                     <!-- Content -->
                     <section>
-                        <h2>Gen AI Engineer</h2>
-                        <h4>UMass Amherst | Aug 2025 – Present | <a href="https://edunotes-ui.onrender.com/" target="_blank" style="color: #f56a6a;">Live App Demo</a></h4>
+                        <h2>Machine Learning Engineer</h2>
+                        <h4>Oracle | 2026 – Present | Contract</h4>
                         <ul>
                             <li>
-                                Designed EduNotes, a multi-agent RAG study
-                                assistant centralizing study materials into a
-                                searchable semantic knowledge base that users
-                                query and build over time
+                                Built hybrid search pipeline combining ColBERT-v2
+                                dense retrieval over FAISS with BM25 sparse search
                             </li>
                             <li>
-                                Content classification, adaptive summarization
-                                and notes generation based on input type with
-                                dynamic query routing
+                                Fused via Reciprocal Rank Fusion, improving
+                                Recall@20 by 26% over keyword-only baseline
                             </li>
                             <li>
-                                Built multi-stage web search agent via
-                                DuckDuckGo and Google fallback with AI-driven
-                                query refinement at each step
+                                Fine-tuned MonoBERT re-ranker on 200K query-click
+                                pairs for top-50 candidate reordering
                             </li>
                             <li>
-                                Orchestrated via LangChain & ChromaDB, to
-                                produce AI-generated flashcards, quizzes, notes,
-                                summaries, and progress analytics
+                                Improved MRR by 18% over the fused retrieval
+                                baseline
                             </li>
                             <li>
-                                Research Mode with vision model analysis of PDF
-                                figures, tables, equations along with references
-                                from OpenAlex, arXiv & Semantic Scholar
+                                Implemented query normalization for short and
+                                verbose inputs
                             </li>
                             <li>
-                                AI Chat agent with 7 modes (Socratic Tutor,
-                                Compare Topics, Research Writer, etc.) powered
-                                by Gemini 2.5 Flash and searchable conversation
-                                history
+                                Reduced zero-result rate from 8.2% to 3.1%
+                                across 500K daily queries
                             </li>
                             <li>
-                                Distributed workload across Llama 3.3 70B for
-                                generation, Llama 3.1 8B for lightweight tasks,
-                                and Llama 4 Scout for vision analysis
+                                Evaluated retrieval quality using RAGAS on a
+                                3K human-labeled query set
                             </li>
                             <li>
-                                Built with FastAPI & Streamlit, supporting 6+
-                                input formats (PDF, URL, text, topic, web
-                                search) and 3+ output formats
+                                Weekly regression benchmarks tracked via MLflow
+                            </li>
+                            <li>
+                                Deployed via FastAPI with Kubernetes and Redis
+                                caching
+                            </li>
+                            <li>
+                                99% of requests served under 80ms at production
+                                scale
                             </li>
                         </ul>
 
                         <hr class="major" />
 
-                        <h2>Graduate Student Researcher</h2>
+                        <h2>Graduate Researcher</h2>
                         <h4>Cisco | Jan 2025 – Jul 2025 | Amherst, MA</h4>
                         <ul>
                             <li>
@@ -208,7 +205,7 @@
 
                         <hr class="major" />
 
-                        <h2>Machine Learning Engineer</h2>
+                        <h2>Data Scientist</h2>
                         <h4>
                             Carelon Global Solutions (Elevance Health) | Jun
                             2021 – Jul 2023 | Hyderabad, India
