@@ -134,16 +134,16 @@
                                 baseline
                             </li>
                             <li>
-                                Implemented query normalization for short and
+                                Implemented query normalization for noisy and
                                 verbose inputs
                             </li>
                             <li>
-                                Reduced zero-result rate from 8.2% to 3.1%
-                                across 500K daily queries
+                                Reduced zero-result rate from 7.2% to 3.1%
+                                across 30K daily queries
                             </li>
                             <li>
-                                Evaluated retrieval quality using RAGAS on a
-                                3K human-labeled query set
+                                Evaluated retrieval quality using Recall, NDCG on a
+                                3K human-ranked judgments
                             </li>
                             <li>
                                 Weekly regression benchmarks tracked via MLflow
@@ -153,8 +153,7 @@
                                 caching
                             </li>
                             <li>
-                                99% of requests served under 80ms at production
-                                scale
+                                First-stage retrieval for p99 latency under 80ms
                             </li>
                         </ul>
 
